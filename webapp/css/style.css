@@ -1,0 +1,69 @@
+md-content.md-default-theme {
+  background-color: #eee;
+}
+
+md-card {
+  background-color: #fff;
+}
+md-card h2:first-of-type {
+  margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+  border-radius: 99%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+  opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #03b1f4;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+
+md-sidenav ng-md-icon {
+  position: relative;
+  top: 5px;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.main-content {
+  margin:  10px;
+  padding: 2px;
+  min-height: 100vh;
+}
+
+.appfooter{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color:  #454545;  
+  color: #a0a0a0;
+}
+
+.appfooter a {
+  color: #a0a0a0;
+}
+
+.appfooter ul li {
+  display:  inline;
+  margin:  10px;
+}

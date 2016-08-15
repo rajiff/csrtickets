@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSR Ticket Log & Followup</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/angular-material/angular-material.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/angular-material-icons/angular-material-icons.css" media="screen" title="no title" charset="utf-8">  
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app='csrapp' ng-controller="AppRouteCtrl" ng-cloak>
+  <!-- Main layout of app -->
+  
+  <div layout="column" ng-clock>
+    <div ui-view="header"></div>
+    <div ui-view="content" class='main-content'></div>
+    <div ui-view="footer"></div>
+  </div>
+  
+  <script src="/angular/angular.js" charset="utf-8"></script>
+  <script src="/angular-animate/angular-animate.min.js" charset="utf-8"></script>
+  <script src="/angular-aria/angular-aria.min.js" charset="utf-8"></script>
+  <script src="/angular-messages/angular-messages.min.js" charset="utf-8"></script>
+  
+  <!-- UI Framework -->
+  <script src="/angular-material/angular-material.min.js" charset="utf-8"></script>
+  <script src="/angular-material-icons/angular-material-icons.min.js" charset="utf-8"></script>
+  
+  <!-- Client routes -->
+  <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+  <!-- Base app -->
+  <script src="csrapp.module.js" charset="utf-8"></script>
+  
+  <!-- Home, which is loaded first -->
+  <script src="/home/controller/HeaderCtrl.js" charset="utf-8"></script>
+  <script src="/home/controller/IndexCtrl.js" charset="utf-8"></script>
+  <script src="/home/home.module.js" charset="utf-8"></script>
+  
+  <!-- Ticket functional module -->
+  <script src="/tickets/controller/TicketCtrl.js" charset="utf-8"></script>
+  <script src="/tickets/controller/TicketViewCtrl.js" charset="utf-8"></script>
+  <script src="/tickets/tickets.module.js" charset="utf-8"></script>
+  
+</body>
+</html>
