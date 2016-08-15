@@ -42,8 +42,10 @@ csrapp.config(["$mdThemingProvider",
       })
       .accentPalette('pink');
 
-    $mdThemingProvider.theme('input', 'default')
-      .primaryPalette('grey')
+    $mdThemingProvider.theme('input', 'default').primaryPalette('grey')
+
+    $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').primaryPalette(
+      'grey').dark()
   }
 ]);
 

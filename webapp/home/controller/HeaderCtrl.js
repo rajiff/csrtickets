@@ -3,7 +3,7 @@ var csrapp = angular.module('csrapp');
 csrapp.controller('HeaderCtrl', ['$scope', '$mdSidenav',
   function($scope, $mdSidenav) {
 
-    $scope.appname = 'CSR Tickets Log & Follow-up';
+    $scope.appname = 'CSR Hub';
     $scope.apphomelink = 'index';
 
     $scope.user = {

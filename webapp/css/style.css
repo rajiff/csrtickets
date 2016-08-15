@@ -38,6 +38,10 @@ md-sidenav ng-md-icon {
   top: 5px;
 }
 
+.custom_card {
+  color:  #fff;
+}
+
 .user-avatar {
   border-radius: 99%;
 }
@@ -67,3 +71,4 @@ md-sidenav ng-md-icon {
   display:  inline;
   margin:  10px;
 }
+

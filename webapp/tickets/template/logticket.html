@@ -1,1 +1,90 @@
-<h2>Log Ticket</h2>
+<md-content layout-padding>
+    <form name="csrTicketForm" ng-submit="logNewTicket()">
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Customer Name</label>
+                <input md-maxlength="30" required name="customerName" ng-model="ticket.customerName" />
+                <div class="hint" ng-if="showHints">Tell us first name or full name of the customer</div>
+                <div ng-messages="csrTicketForm.customerName.$error" ng-if="!showHints">
+                    <div ng-message="required">Name is required.</div>
+                    <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                </div>
+            </md-input-container>
+            <div flex="5" hide-xs hide-sm>
+                <!-- Spacer //-->
+            </div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input name="customerEmail" ng-model="ticket.customerEmail" required minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                <div class="hint" ng-show="showHints">How to reach customer?</div>
+                <div ng-messages="csrTicketForm.customerEmail.$error" ng-hide="showHints">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                    </div>
+                </div>
+            </md-input-container>
+            <div flex="5" hide-xs hide-sm>
+                <!-- Spacer //-->
+            </div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Phone Number</label>
+                <input name="customerPhone" ng-model="ticket.customerPhone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/" />
+                <div class="hint" ng-show="showHints">(###) ###-####</div>
+                <div ng-messages="csrTicketForm.customerPhone.$error" ng-hide="showHints">
+                    <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Product Name</label>
+                <input name="productInfo" ng-model="ticket.productInfo" />
+                <div class="hint" ng-if="showHints">Product Name, for which customer need help</div>
+                <div ng-messages="csrTicketForm.productInfo.$error" ng-if="!showHints">
+                    <div ng-message="required">Please enter a valid product name</div>
+                </div>
+            </md-input-container>
+            <div flex="5" hide-xs hide-sm>
+                <!-- Spacer //-->
+            </div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Product code</label>
+                <input name="productCode" ng-model="ticket.productCode" />
+                <div class="hint" ng-if="showHints">Product code, to identify internally</div>
+                <div ng-messages="csrTicketForm.productCode.$error" ng-if="!showHints">
+                    <div ng-message="required">Please select valid product code</div>
+                </div>
+            </md-input-container>
+            <div flex="5" hide-xs hide-sm>
+                <!-- Spacer //-->
+            </div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Store Location</label>
+                <md-select name="storeLocation" ng-model="ticket.storeLocation">
+                    <md-option ng-repeat="store in storeLocs" value="{{store.location}}">
+                        {{store.location}} ({{store.pin}})
+                    </md-option>
+                </md-select>
+                <!-- <input name="storeLocation" ng-model="ticket.storeLocation" /> -->
+                <div class="hint" ng-if="showHints">Store location, where sale happened</div>
+                <div ng-messages="csrTicketForm.storeLocation.$error" ng-if="!showHints">
+                    <div ng-message="required">Store Location is required</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Customer Query</label>
+                <textarea name="customerQuery" ng-model="ticket.customerQuery"></textarea>
+                <div class="hint" ng-show="showHints">Brief details of query by customer</div>
+                <div ng-messages="csrTicketForm.customerQuery.$error" ng-hide="showHints">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength']">Please provide valid query details</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout-gt-sm="row" layout-align='center center'>
+            <md-button class="md-raised">Cancel</md-button>
+            <md-button type="submit" class="md-raised md-primary">Create</md-button>
+        </div>
+    </form>
+</md-content>
